@@ -4,73 +4,123 @@ import (
 	"fmt"
 )
 
-type Book struct {
-	Title     string
-	Author    string
-	Year      int
-	Available bool
+type Person struct {
+	Name string
+	Age int
 }
 
-func (b Book) Describe() {
-	availability := "No"
-	if b.Available {
-		availability = "Yes"
-	}
-	fmt.Printf("Title: %s, Author: %s, Year: %d, Available: %s\n", b.Title, b.Author, b.Year, availability)
-}
-
-var library []Book
-
-func AddBook(book Book) {
-	library = append(library, book)
-}
-
-func FindBook(title, author string) {
-	for _, book := range library {
-		if book.Title == title && book.Author == author {
-			book.Describe()
-			return
-		}
-	}
-	fmt.Println("Book not found.")
-}
-
-func BorrowBook(title, author string) {
-	for i, book := range library {
-		if book.Title == title && book.Author == author && book.Available {
-			library[i].Available = false
-			fmt.Println("Book borrowed successfully.")
-			return
-		}
-	}
-	fmt.Println("Book cannot be borrowed.")
-}
-
-func DisplayLibrary() {
-	for _, book := range library {
-		book.Describe()
-	}
-}
+const Pi = 3.14
 
 func main() {
-	// Add some books to the library
-	AddBook(Book{Title: "The Go Programming Language", Author: "Alan A. A. Donovan", Year: 2015, Available: true})
-	AddBook(Book{Title: "Learning Go", Author: "Miek Gieben", Year: 2021, Available: true})
+	var x int = 10
+	displayNumber(x)
 
-	// Display all books
-	fmt.Println("Library Collection:")
-	DisplayLibrary()
+	var integer int = 10
+	var decimal float64 = 10.1
+	var text string = "hello"
+	var condition bool = true
 
-	// Find a book
-	FindBook("Learning Go", "Miek Gieben")
+	fmt.Println("nilai integer adalah:", integer)
+	fmt.Println("nilai decimal adalah:", decimal)
+	fmt.Println("nilai text adalah:", text)
+	fmt.Println("nilai condition adalah:", condition)
 
-	// Borrow a book
-	BorrowBook("The Go Programming Language", "Alan A. A. Donovan")
-	
-	// Try to borrow the same book again
-	BorrowBook("The Go Programming Language", "Alan A. A. Donovan")
+	// struct
+	john := Person{Name: "John Doe", Age: 25}
+	fmt.Println("Struct Person:", john)
 
-	// Display all books again to see the updated status
-	fmt.Println("\nUpdated Library Collection:")
-	DisplayLibrary()
+	// Slice
+	numbers := []int{1, 2, 3, 4, 5}
+	fmt.Println("Slice numbers:", numbers)
+
+	// Map
+	colors := map[string]string{"red": "#ff0000", "green": "#00ff00", "blue": "#0000ff"}
+	fmt.Println("Map colors:", colors)
+
+	// If Else
+	num := 20
+
+	if(num % 2 == 0) {
+		fmt.Println(num, "is an even number")
+	} else {
+		fmt.Println(num, "is an odd number")
+	}
+
+	// Looping
+	for i, count :=  2, 0; count < 2; i++ {
+		if isPrime(i){
+			fmt.Println(i)
+			count++
+		}
+	}
+
+	// switch case
+	day := 10
+
+	switch day {
+		case 1:
+			fmt.Println("Monday")
+		case 2:
+			fmt.Println("Tuesday")
+		case 3:
+			fmt.Println("Wednesday")
+		case 4:
+			fmt.Println("Thursday")
+		case 5:
+			fmt.Println("Friday")
+		case 6:
+			fmt.Println("Saturday")
+		case 7:
+			fmt.Println("Sunday")
+		default:
+			fmt.Println("Invalid day")
+	}
+
+	//pointer
+	xy := 10
+	fmt.Println("nilai xy adalah:", xy)
+
+	p := &xy // pointer to xy
+	*p = 20
+
+	fmt.Println("nilai xy setelah diubah adalah:", xy)
+
+	// aritmatika
+	a := 10
+	b := 20
+
+	fmt.Println("a + b =", a + b)
+	fmt.Println("a - b =", a - b)
+	fmt.Println("a * b =", a * b)
+	fmt.Println("a / b =", a / b)
+	fmt.Println("a % b =", a % b)
+
+	// operator logika
+	c := true
+	d := false
+	fmt.Println("c && d =", c && d)
+	fmt.Println("c || d =", c || d)
+	fmt.Println("!c =", !c)
+
+	// operator perbandingan
+	fmt.Println("a == b", a == b)
+	fmt.Println("a != b", a != b)
+	fmt.Println("a > b", a > b)
+	fmt.Println("a < b", a < b)
+	fmt.Println("a >= b", a >= b)
+	fmt.Println("a <= b", a <= b)
+}
+
+func displayNumber (number int) {
+	fmt.Println("nilai number adalah:", number)
+}
+
+func isPrime (number int) bool {
+	for i := 2; i < number; i++ {
+		if number % i == 0 {
+			return false
+		}
+	}
+
+	return true
 }
