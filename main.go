@@ -1,123 +1,123 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Person struct {
-	Name string
-	Age int
+		Name string
+		Age int
 }
 
-const Pi = 3.14
 
-func main() {
-	var x int = 10
-	displayNumber(x)
+func main () {
+		// var a int = 10
 
-	var integer int = 10
-	var decimal float64 = 10.1
-	var text string = "hello"
-	var condition bool = true
+		// displayNumber(a)
 
-	fmt.Println("nilai integer adalah:", integer)
-	fmt.Println("nilai decimal adalah:", decimal)
-	fmt.Println("nilai text adalah:", text)
-	fmt.Println("nilai condition adalah:", condition)
+		// var integer int = 20
+		// var float float64 = 30.5
+		// var text string = "Hello World"
+		// var condition bool = true
 
-	// struct
-	john := Person{Name: "John Doe", Age: 25}
-	fmt.Println("Struct Person:", john)
+		// fmt.Println("nilai integer adalah:", integer)
+		// fmt.Println("nilai float adalah:", float)
+		// fmt.Println("nilai text adalah:", text)
+		// fmt.Println("nilai condition adalah:", condition)
 
-	// Slice
-	numbers := []int{1, 2, 3, 4, 5}
-	fmt.Println("Slice numbers:", numbers)
+		// // struct
+		// john := Person{Name: "John", Age: 25}
+		// fmt.Println("Name:", john.Name)
+		// fmt.Println("Age:", john.Age)
 
-	// Map
-	colors := map[string]string{"red": "#ff0000", "green": "#00ff00", "blue": "#0000ff"}
-	fmt.Println("Map colors:", colors)
+		// // slice
+		// var fruits = []string{"apple", "grape", "banana"}
+		// fmt.Println(fruits)
+		// fmt.Println(fruits[0])
 
-	// If Else
-	num := 20
+		// // map
+		// var person = map[string]string{"name": "John", "age": "25"}
+		// fmt.Println(person)
 
-	if(num % 2 == 0) {
-		fmt.Println(num, "is an even number")
-	} else {
-		fmt.Println(num, "is an odd number")
-	}
+		// if else
+		// number := 5
 
-	// Looping
-	for i, count :=  2, 0; count < 2; i++ {
-		if isPrime(i){
-			fmt.Println(i)
-			count++
-		}
-	}
+		// if number%2 == 0 {
+		// 	fmt.Println("Genap")
+		// } else {
+		// 	fmt.Println("Ganjil")
+		// }
 
-	// switch case
-	day := 10
+		// // for loop
+		// fmt.Println("Bilangan pertama dari:", number);
+		// for i, count := 2, 0; count < number; i++ {
+		// 	if isPrime(i) {
+		// 		fmt.Println(i)
+		// 		count++
+		// 	}
+		// }
 
-	switch day {
-		case 1:
-			fmt.Println("Monday")
-		case 2:
-			fmt.Println("Tuesday")
-		case 3:
-			fmt.Println("Wednesday")
-		case 4:
-			fmt.Println("Thursday")
-		case 5:
-			fmt.Println("Friday")
-		case 6:
-			fmt.Println("Saturday")
-		case 7:
-			fmt.Println("Sunday")
-		default:
-			fmt.Println("Invalid day")
-	}
+		// switch case
+		// day := 7
 
-	//pointer
-	xy := 10
-	fmt.Println("nilai xy adalah:", xy)
+		// switch day {
+		// 	case 1:
+		// 		fmt.Println("Senin")
+		// 	case 2:
+		// 		fmt.Println("Selasa")
+		// 	case 3:
+		// 		fmt.Println("Rabu")
+		// 	case 4:
+		// 		fmt.Println("Kamis")
+		// 	case 5:
+		// 		fmt.Println("Jumat")
+		// 	case 6:
+		// 		fmt.Println("Sabtu")
+		// 	case 7:
+		// 		fmt.Println("Minggu")
+		// 	default:
+		// 		fmt.Println("Tidak ada hari")
+		// 	}
 
-	p := &xy // pointer to xy
-	*p = 20
+		// x := 20
+		// fmt.Println("nilai awal x adalah:", x)
 
-	fmt.Println("nilai xy setelah diubah adalah:", xy)
+		// p := &x
+		// *p = 10
 
-	// aritmatika
-	a := 10
-	b := 20
+		// fmt.Println("nilai x setelah diubah adalah:", x)
 
-	fmt.Println("a + b =", a + b)
-	fmt.Println("a - b =", a - b)
-	fmt.Println("a * b =", a * b)
-	fmt.Println("a / b =", a / b)
-	fmt.Println("a % b =", a % b)
+		// operator
+		a := 10
+		b := 3
 
-	// operator logika
-	c := true
-	d := false
-	fmt.Println("c && d =", c && d)
-	fmt.Println("c || d =", c || d)
-	fmt.Println("!c =", !c)
+		fmt.Println("a + b =", a+b)
+		fmt.Println("a - b =", a-b)
+		fmt.Println("a * b =", a*b)
+		fmt.Println("a / b =", a/b)
 
-	// operator perbandingan
-	fmt.Println("a == b", a == b)
-	fmt.Println("a != b", a != b)
-	fmt.Println("a > b", a > b)
-	fmt.Println("a < b", a < b)
-	fmt.Println("a >= b", a >= b)
-	fmt.Println("a <= b", a <= b)
+		// Operator lain
+		c := true
+		d := false
+
+		fmt.Println("c && d =", c && d)
+		fmt.Println("c || d =", c || d)
+		fmt.Println("!c =", !c)
+
+		// Operator perbandingan
+		fmt.Println("a == b =", a == b)
+		fmt.Println("a != b =", a != b)
+		fmt.Println("a > b =", a > b)
+		fmt.Println("a < b =", a < b)
+		fmt.Println("a >= b =", a >= b)
+		fmt.Println("a <= b =", a <= b)
 }
 
-func displayNumber (number int) {
+func displayNumber(number int){
 	fmt.Println("nilai number adalah:", number)
 }
 
-func isPrime (number int) bool {
+func isPrime(number int) bool {
 	for i := 2; i < number; i++ {
-		if number % i == 0 {
+		if number%i == 0 {
 			return false
 		}
 	}
